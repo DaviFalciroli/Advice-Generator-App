@@ -1,13 +1,12 @@
-import { Instance } from "./axios"
+import { instance } from "./axios"
 
 export class AdviceService {
     static getAdvice = async () => {
         try {
-            const response = await Instance({
+            const response = await instance({
                 method: "GET",
+                url: "/advice"
             })
-            console.log(response.data);
-
             return response.data;
 
         } catch (error) {
